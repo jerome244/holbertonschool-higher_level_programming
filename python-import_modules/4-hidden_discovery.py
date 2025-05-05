@@ -14,7 +14,7 @@ def main():
         if instruction.opname == 'LOAD_NAME':
             if not instruction.argval.startswith('__'):
                 names.add(instruction.argval)
-    
+
     # Sort the names alphabetically and print each on a new line
     for name in sorted(names):
         print(name)
