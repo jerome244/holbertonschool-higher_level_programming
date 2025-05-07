@@ -1,24 +1,12 @@
-import dis
+#!/usr/bin/python3
+import marshal
 import sys
 
-
-def main():
-    # Load the compiled .pyc file into a code object
+if __name__ == "__main__":
     with open(sys.argv[1], 'rb') as f:
-        f.seek(16)  # Skip the .pyc header
-        code = f.read()
+        f.seek(16)  # Skip .pyc header (magic number, timestamp, size, hash)
+        code = marshal.load(f)
 
-    # Disassemble the code object
-    names = set()
-    for instruction in dis.get_instructions(code):
-        if instruction.opname == 'LOAD_NAME':
-            if not instruction.argval.startswith('__'):
-                names.add(instruction.argval)
-
-    # Sort the names alphabetically and print each on a new line
+    names = [name for name in code.co_names if not name.startswith('__')]
     for name in sorted(names):
         print(name)
-
-
-if __name__ == "__main__":
-    main()
