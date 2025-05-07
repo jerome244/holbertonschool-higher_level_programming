@@ -3,6 +3,8 @@ import marshal
 import sys
 
 if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        sys.exit(1)
     with open(sys.argv[1], 'rb') as f:
         f.seek(16)
         code = marshal.load(f)
