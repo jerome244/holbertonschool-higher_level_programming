@@ -1,12 +1,7 @@
 #!/usr/bin/python3
-import marshal
-import sys
-
 if __name__ == "__main__":
-    with open(sys.argv[1], 'rb') as f:
-        f.seek(16)  # Skip .pyc header (magic number, timestamp, size, hash)
-        code = marshal.load(f)
-
-    names = [name for name in code.co_names if not name.startswith('__')]
-    for name in sorted(names):
-        print(name)
+    import hidden_4
+    names = dir(hidden_4)
+    for i in range(0, len(names)):
+        if not (len(names) > 2 and names[i][0] == '_' and names[i][1] == '_'):
+            print(names[i])
