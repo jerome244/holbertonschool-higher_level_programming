@@ -11,4 +11,4 @@ if __name__ == "__main__":
 
     names = [name for name in code.co_names if not name.startswith('__')]
     for name in sorted(names):
-        print(name)
+        print(code.co_names)
