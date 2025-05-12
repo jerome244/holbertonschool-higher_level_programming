@@ -3,7 +3,8 @@
 def print_matrix_integer(matrix=[[]]):
     """
     Prints a matrix of integers.
-    Each integer is printed with str.format(), separated by a space. After each row, prints a newline.
+    Each integer is printed with str.format(), separated by a space.
+    After each row, prints a newline.
     If no matrix is provided, prints an empty line.
 
     Args:
