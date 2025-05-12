@@ -1,0 +1,9 @@
+click==8.2.0
+colorama==0.4.6
+iniconfig==2.1.0
+packaging==25.0
+pluggy==1.5.0
+pycode==0.1.2
+pycodestyle==2.13.0
+pytest==8.3.5
+PyYAML==6.0.2
