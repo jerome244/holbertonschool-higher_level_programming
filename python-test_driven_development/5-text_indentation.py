@@ -1,36 +1,25 @@
 #!/usr/bin/python3
-"""
-Module 5-text_indentation
-
-Provides function text_indentation that prints text with two new lines
-after each '.', '?', and ':' character, without leading/trailing spaces.
-"""
+"""Defines a text_indentation function."""
 
 def text_indentation(text):
     """
-    Prints text with two new lines after '.', '?', and ':' characters.
-
-    Args:
-        text (str): The text to be formatted and printed.
-
-    Raises:
-        TypeError: if text is not a string.
+    prints text formatted with two newlines after . ? and :
     """
-    if type(text) is not str:
+    if not isinstance(text, str):
         raise TypeError("text must be a string")
-
-    separators = '.?:'
-    i = 0
-    length = len(text)
-
-    while i < length:
-        char = text[i]
-        print(char, end="")
-        if char in separators:
-            # skip following spaces
-            i += 1
-            while i < length and text[i] == ' ':
-                i += 1
-            print("\n")
-            continue
-        i += 1
+    new = text.split(".")
+    new = [line.strip() for line in new]
+    new = [(line + '.\n\n') if index + 1 != len(new) else line
+           for index, line in enumerate(new)]
+    new = ''.join(new)
+    new = new.split(":")
+    new = [line.strip(' ') for line in new]
+    new = [(line + ':\n\n') if index + 1 != len(new) else line
+           for index, line in enumerate(new)]
+    new = ''.join(new)
+    new = new.split("?")
+    new = [line.strip(' ') for line in new]
+    new = [(line + '?\n\n') if index + 1 != len(new) else line
+           for index, line in enumerate(new)]
+    new = ''.join(new)
+    print("{:s}".format(new), end="")
