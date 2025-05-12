@@ -1,0 +1,27 @@
+> > > add\_integer = **import**('0-add\_integer').add\_integer
+> > > add\_integer(1, 2)
+> > > 3
+> > > add\_integer(100, -2)
+> > > 98
+> > > add\_integer(2)
+> > > 100
+> > > add\_integer(100.3, -2)
+> > > 98
+> > > add\_integer(1.7, 2.8)
+> > > 3
+> > > add\_integer(0, 0)
+> > > 0
+> > > add\_integer(-5, -5)
+> > > -10
+> > > add\_integer(4, "School")  # b is not an integer
+> > > Traceback (most recent call last):
+> > > ...
+> > > TypeError: b must be an integer
+> > > add\_integer("School", 2)  # a is not an integer
+> > > Traceback (most recent call last):
+> > > ...
+> > > TypeError: a must be an integer
+> > > add\_integer(None)  # a is not an integer
+> > > Traceback (most recent call last):
+> > > ...
+> > > TypeError: a must be an integer
