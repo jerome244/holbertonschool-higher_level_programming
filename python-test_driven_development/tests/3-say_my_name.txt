@@ -1,0 +1,21 @@
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+# Basic usage with both names
+>>> say_my_name("John", "Smith")
+My name is John Smith
+
+# Only first name (last_name defaults to "")
+>>> say_my_name("Alice")
+My name is Alice 
+
+# Type checks: first_name must be string
+>>> say_my_name(123, "Smith")
+Traceback (most recent call last):
+  ...
+TypeError: first_name must be a string
+
+# Type checks: last_name must be string
+>>> say_my_name("John", 456)
+Traceback (most recent call last):
+  ...
+TypeError: last_name must be a string
