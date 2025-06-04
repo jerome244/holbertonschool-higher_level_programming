@@ -1,6 +1,8 @@
 #!/usr/bin/python3
+'''Module for to_json_string method.'''
 import json
 
-def from_json_string(my_str):
-    """Returns the Python object represented by a JSON string."""
-    return json.loads(my_str)
+
+def to_json_string(my_obj):
+    '''Method for rendering object to json string.'''
+    return json.dumps(my_obj)
