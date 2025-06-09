@@ -37,8 +37,7 @@ class SimpleAPIHandler(BaseHTTPRequestHandler):
             self._send_response(200, "application/json", json_info)
 
         else:
-            error = {"error": "Endpoint not found"}
-            self._send_response(404, "application/json", json.dumps(error))
+            self._send_response(404, "text/plain", "Endpoint not found")
 
 def run(server_class=HTTPServer, handler_class=SimpleAPIHandler, port=8000):
     server_address = ('', port)
