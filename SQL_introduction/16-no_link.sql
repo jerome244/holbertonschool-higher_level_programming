@@ -1,3 +1,4 @@
+-- Lists all records of second_table where name is not null, ordered by descending score
 SELECT
   score,
   name
@@ -7,3 +8,4 @@ WHERE
   name IS NOT NULL
 ORDER BY
   score DESC;
+  

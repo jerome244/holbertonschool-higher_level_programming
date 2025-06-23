@@ -1,3 +1,4 @@
+-- Lists score and name for records with score >= 10, ordered descending
 SELECT
   score,
   name
@@ -7,3 +8,4 @@ WHERE
   score >= 10
 ORDER BY
   score DESC;
+  
