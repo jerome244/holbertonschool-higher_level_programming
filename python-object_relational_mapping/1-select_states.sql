@@ -1,3 +1,0 @@
-SELECT *
-FROM states
-ORDER BY id ASC;
