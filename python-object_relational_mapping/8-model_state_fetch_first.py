@@ -9,9 +9,8 @@ from model_state import Base, State
 
 def main():
     engine = create_engine(
-        'mysql+mysqldb://{}:{}@localhost/{}'
-        .format(argv[1], argv[2], argv[3]),
-        pool_pre_ping=True
+        "mysql+mysqldb://{}:{}@localhost/{}".format(argv[1], argv[2], argv[3]),
+        pool_pre_ping=True,
     )
     session = Session(engine)
 
