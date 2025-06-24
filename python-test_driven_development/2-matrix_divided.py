@@ -29,12 +29,13 @@ def matrix_divided(matrix, div):
     if div == 0:
         raise ZeroDivisionError("division by zero")
 
-    # Validate matrix
+    # Validate matrix structure
     if (not isinstance(matrix, list) or
-        any(not isinstance(row, list) for row in matrix) or
-        len(matrix) == 0):
+        len(matrix) == 0 or
+        any(not isinstance(row, list) for row in matrix)):
         raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
 
+    # All rows must be same size
     row_length = len(matrix[0])
     new_matrix = []
 
