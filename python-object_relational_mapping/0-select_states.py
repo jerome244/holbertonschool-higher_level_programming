@@ -1,28 +1,35 @@
 #!/usr/bin/python3
 """
-0-select_states script: lists all states from the specified MySQL database.
-"""
+0-select_states.py: Lists all states from the specified MySQL database.
 
+Usage: ./0-select_states.py <mysql_username> <mysql_password> <database_name>
+"""
 import sys
 import MySQLdb
 
 
 def main():
-    """Connect to MySQL, retrieve all states, and print each as a tuple."""
-    user = sys.argv[1]
-    passwd = sys.argv[2]
-    db_name = sys.argv[3]
+    """Connects to MySQL, retrieves all states ordered by id, and prints each row as a tuple."""
+    username, password, database = sys.argv[1], sys.argv[2], sys.argv[3]
 
-    db = MySQLdb.connect(host="localhost", port=3306,
-                         user=user, passwd=passwd,
-                         db=db_name, charset="utf8")
-    cursor = db.cursor()
-    cursor.execute("SELECT * FROM states ORDER BY id ASC")
-    for state in cursor.fetchall():
+    connection = MySQLdb.connect(
+        host="localhost",
+        port=3306,
+        user=username,
+        passwd=password,
+        db=database,
+        charset="utf8"
+    )
+    cursor = connection.cursor()
+    cursor.execute("SELECT * FROM states ORDER BY id ASC;")
+    states = cursor.fetchall()
+    for state in states:
         print(state)
     cursor.close()
-    db.close()
+    connection.close()
 
 
 if __name__ == "__main__":
+    if len(sys.argv) != 4:
+        sys.exit(1)
     main()
