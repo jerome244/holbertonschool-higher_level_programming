@@ -4,6 +4,7 @@ Module 3-say_my_name
 Defines say_my_name(*args) to print names and handle missing args.
 """
 
+
 def say_my_name(*args):
     """
     Print "My name is <first_name> <last_name>".
