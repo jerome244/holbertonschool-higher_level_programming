@@ -1,28 +1,25 @@
 #!/usr/bin/python3
-"""Lists all cities of a given state from the database hbtn_0e_4_usa."""
+"""First state Alchemy"""
 
-import MySQLdb
 from sys import argv
+from model_state import Base, State
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
-    conn = MySQLdb.connect(
-        host="localhost",
-        port=3306,
-        user=argv[1],
-        passwd=argv[2],
-        db=argv[3],
-        charset="utf8",
+    engine = create_engine(
+        'mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
+            argv[1], argv[2], argv[3]
+        ),
+        pool_pre_ping=True
     )
-    cur = conn.cursor()
-    cur.execute(
-        "SELECT cities.name FROM cities "
-        "JOIN states ON cities.state_id = states.id "
-        "WHERE states.name = %s "
-        "ORDER BY cities.id ASC",
-        (argv[4],),
-    )
-    rows = cur.fetchall()
-    # Print names comma-separated
-    print(", ".join(r[0] for r in rows))
-    cur.close()
-    conn.close()
+    Base.metadata.create_all(engine)
+
+    Session = sessionmaker(bind=engine)
+    session = Session()
+    state = session.query(State).order_by(State.id).first()
+    if state:
+        print(f"{state.id}: {state.name}")
+    else:
+        print("Nothing")
+    session.close()
