@@ -12,14 +12,15 @@ if __name__ == "__main__":
 
     user, password, database = sys.argv[1], sys.argv[2], sys.argv[3]
     engine = create_engine(
-        f"mysql+mysqldb://{user}:{password}@localhost/{database}",
-        pool_pre_ping=True
+        f"mysql+mysqldb://{user}:{password}@localhost/{database}", pool_pre_ping=True
     )
     Session = sessionmaker(bind=engine)
     session = Session()
 
     # Query for states containing the letter 'a'
-    states_with_a = session.query(State).filter(State.name.like('%a%')).order_by(State.id)
+    states_with_a = (
+        session.query(State).filter(State.name.like("%a%")).order_by(State.id)
+    )
     for state in states_with_a:
         print(f"{state.id}: {state.name}")
 

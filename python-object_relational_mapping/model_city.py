@@ -9,6 +9,7 @@ from sqlalchemy.orm import relationship
 
 Base = declarative_base()
 
+
 class City(Base):
     """
     City ORM class mapped to the 'cities' table.
@@ -21,15 +22,17 @@ class City(Base):
     Relationships:
         state (State): The State object this city belongs to.
     """
-    __tablename__ = 'cities'
+
+    __tablename__ = "cities"
 
     id = Column(Integer, primary_key=True, nullable=False, autoincrement=True)
     name = Column(String(128), nullable=False)
-    state_id = Column(Integer, ForeignKey('states.id'), nullable=False)
+    state_id = Column(Integer, ForeignKey("states.id"), nullable=False)
 
-    state = relationship('State', back_populates='cities')
+    state = relationship("State", back_populates="cities")
+
 
 # Ensure back-reference on State
 from model_state import State
-State.cities = relationship('City', order_by=City.id, back_populates='state')
 
+State.cities = relationship("City", order_by=City.id, back_populates="state")

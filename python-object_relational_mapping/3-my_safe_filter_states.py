@@ -9,7 +9,10 @@ if __name__ == "__main__":
         sys.exit(1)
 
     username, password, database, state_name = (
-        sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4]
+        sys.argv[1],
+        sys.argv[2],
+        sys.argv[3],
+        sys.argv[4],
     )
 
     # Connect to MySQL server
@@ -19,7 +22,7 @@ if __name__ == "__main__":
         user=username,
         passwd=password,
         db=database,
-        charset="utf8"
+        charset="utf8",
     )
     cursor = connection.cursor()
 

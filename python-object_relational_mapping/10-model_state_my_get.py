@@ -10,11 +10,16 @@ if __name__ == "__main__":
     if len(sys.argv) != 5:
         sys.exit(1)
 
-    username, password, database, state_name = sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4]
+    username, password, database, state_name = (
+        sys.argv[1],
+        sys.argv[2],
+        sys.argv[3],
+        sys.argv[4],
+    )
 
     engine = create_engine(
         f"mysql+mysqldb://{username}:{password}@localhost/{database}",
-        pool_pre_ping=True
+        pool_pre_ping=True,
     )
     # Ensure the table exists (no fetching all states)
     Base.metadata.create_all(engine)

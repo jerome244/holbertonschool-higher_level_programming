@@ -9,14 +9,13 @@ from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
 from model_city import City
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     if len(sys.argv) != 4:
         sys.exit(1)
 
     user, password, database = sys.argv[1], sys.argv[2], sys.argv[3]
     engine = create_engine(
-        f"mysql+mysqldb://{user}:{password}@localhost/{database}",
-        pool_pre_ping=True
+        f"mysql+mysqldb://{user}:{password}@localhost/{database}", pool_pre_ping=True
     )
     Base.metadata.create_all(engine)
 
@@ -28,4 +27,3 @@ if __name__ == '__main__':
         print(f"{city.state.name}: ({city.id}) {city.name}")
 
     session.close()
-
