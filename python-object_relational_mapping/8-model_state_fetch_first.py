@@ -4,7 +4,7 @@
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from model_state import State
+from model_state import Base, State
 
 if __name__ == "__main__":
     if len(sys.argv) != 4:
@@ -15,12 +15,15 @@ if __name__ == "__main__":
         f"mysql+mysqldb://{user}:{password}@localhost/{database}",
         pool_pre_ping=True
     )
+    # Ensure the table structure exists
+    Base.metadata.create_all(engine)
+
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    first = session.query(State).order_by(State.id).first()
-    if first:
-        print(f"{first.id}: {first.name}")
+    first_state = session.query(State).order_by(State.id).first()
+    if first_state:
+        print(f"{first_state.id}: {first_state.name}")
     else:
         print("Nothing")
 
