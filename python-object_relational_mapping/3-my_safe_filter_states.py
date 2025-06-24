@@ -25,7 +25,7 @@ if __name__ == "__main__":
         charset="utf8",
     )
     cursor = connection.cursor()
-
+    
     # Safe query using parameterized arguments to prevent SQL injection
     query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
     cursor.execute(query, (state_name,))
