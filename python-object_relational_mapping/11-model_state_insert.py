@@ -15,13 +15,13 @@ if __name__ == "__main__":
         f"mysql+mysqldb://{user}:{password}@localhost/{database}",
         pool_pre_ping=True
     )
-    # Create tables if they don't exist
+    # Create the states table if it doesn't exist
     Base.metadata.create_all(engine)
 
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    # Create and add new State
+    # Add the new state
     new_state = State(name="Louisiana")
     session.add(new_state)
     session.commit()
