@@ -3,7 +3,8 @@
 
 def multiple_returns(sentence):
     """
-    Returns a tuple containing the length of the sentence and its first character.
+    Returns a tuple containing the length of the sentence
+    and its first character.
     If the sentence is empty, the first character is None.
 
     Args:
