@@ -4,6 +4,7 @@ Module 2-matrix_divided
 Divides all elements of a matrix by a divisor.
 """
 
+
 def matrix_divided(matrix, div):
     """
     Divide each number in matrix by div.
