@@ -1,12 +1,14 @@
 #!/usr/bin/python3
 """
-Module that defines a function to safely print the first x integer elements of a list.
+Module that defines a function to safely print the
+first x integer elements of a list.
 """
 
 
 def safe_print_list_integers(my_list=[], x=0):
     """
-    Prints the first x elements of my_list that are integers, all on the same line,
+    Prints the first x elements of my_list that are integers,
+    all on the same line,
     followed by a new line.
     Non-integer elements are skipped silently.
     If x is greater than the list length, stops when the list ends.
