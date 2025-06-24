@@ -4,7 +4,9 @@
 import MySQLdb
 from sys import argv
 
-if __name__ == "__main__":
+
+def main():
+    """Connects to the database and prints cities for the given state."""
     conn = MySQLdb.connect(
         host="localhost", port=3306,
         user=argv[1], passwd=argv[2],
@@ -23,3 +25,7 @@ if __name__ == "__main__":
     print(", ".join(names))
     cur.close()
     conn.close()
+
+
+if __name__ == "__main__":
+    main()
