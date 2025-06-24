@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 
 
-
 def update_dictionary(a_dictionary, key, value):
     """
     Replaces or adds a key/value in the given dictionary.
