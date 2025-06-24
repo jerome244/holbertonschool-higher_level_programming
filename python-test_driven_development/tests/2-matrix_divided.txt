@@ -1,4 +1,4 @@
->>> matrix_divided = __import__('matrix_divided_8').matrix_divided
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
 
 # Basic operation
 >>> matrix = [[1, 2, 3], [4, 5, 6]]

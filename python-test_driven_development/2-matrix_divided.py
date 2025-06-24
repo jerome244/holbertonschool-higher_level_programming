@@ -7,6 +7,7 @@ of a matrix by div and returns a new matrix with each result
 rounded to 2 decimal places.
 """
 
+
 def matrix_divided(matrix, div):
     """
     Divides all elements of a matrix (list of lists of int/float)
@@ -30,9 +31,11 @@ def matrix_divided(matrix, div):
         raise ZeroDivisionError("division by zero")
 
     # Validate matrix structure
-    if (not isinstance(matrix, list) or
-        len(matrix) == 0 or
-        any(not isinstance(row, list) for row in matrix)):
+    if (
+        not isinstance(matrix, list)
+        or len(matrix) == 0
+        or any(not isinstance(row, list) for row in matrix)
+    ):
         raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
 
     # All rows must be same size
@@ -45,7 +48,9 @@ def matrix_divided(matrix, div):
         new_row = []
         for val in row:
             if not isinstance(val, (int, float)):
-                raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+                raise TypeError(
+                    "matrix must be a matrix (list of lists) of integers/floats"
+                )
             new_row.append(round(val / div, 2))
         new_matrix.append(new_row)
 
