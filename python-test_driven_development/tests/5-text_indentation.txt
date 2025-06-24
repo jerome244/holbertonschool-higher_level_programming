@@ -1,10 +1,3 @@
-##
-# Testsuite for 5-text_indentation.py
-#
-# Expected to find one function text_indentation(text)
-#     function takes a string and adds 2 newlines after . ? and :
-##
-
 >>> text_indentation = __import__('5-text_indentation').text_indentation
 
 >>> text_indentation("next. line")
@@ -24,5 +17,10 @@ line
 
 >>> text_indentation(2) # doctest: +ELLIPSIS
 Traceback (most recent call last):
-...
+    ...
 TypeError: text must be a string
+
+>>> text_indentation()  # missing argument
+Traceback (most recent call last):
+    ...
+TypeError: text_indentation() missing 1 required positional argument: 'text'
