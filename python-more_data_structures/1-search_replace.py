@@ -3,7 +3,8 @@
 
 def search_replace(my_list, search, replace):
     """
-    Returns a new list where all occurrences of 'search' in my_list are replaced by 'replace'.
+    Returns a new list where all occurrences of 'search'
+    in my_list are replaced by 'replace'.
 
     Args:
         my_list (list): The original list.
