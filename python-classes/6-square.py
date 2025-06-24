@@ -1,12 +1,15 @@
 #!/usr/bin/python3
-"""Defines a Square class with size and position attributes, plus area and printing."""
+"""Defines a Square class with size and position
+attributes, plus area and printing."""
 
 
 class Square:
-    """Represents a square with private size and position, area calculation, and printing."""
+    """Represents a square with private size
+    and position, area calculation, and printing."""
 
     def __init__(self, size=0, position=(0, 0)):
-        """Initialize a new Square, validating size and position via setters."""
+        """Initialize a new Square, validating
+        size and position via setters."""
         self.size = size
         self.position = position
 
@@ -31,7 +34,8 @@ class Square:
 
     @position.setter
     def position(self, value):
-        """Set the position of the square with validation."""
+        """Set the position of the square with
+        validation."""
         if (
             not isinstance(value, tuple)
             or len(value) != 2
@@ -46,7 +50,8 @@ class Square:
         return self.__size * self.__size
 
     def my_print(self):
-        """Print the square using the '#' character, offset by position or an empty line if size is 0."""
+        """Print the square using the '#' character, offset by
+        position or an empty line if size is 0."""
         if self.__size == 0:
             print("")
             return

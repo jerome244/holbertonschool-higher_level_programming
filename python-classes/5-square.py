@@ -1,12 +1,15 @@
 #!/usr/bin/python3
-"""Defines a Square class with private size attribute, getter/setter, area, and my_print method."""
+"""Defines a Square class with private size attribute,
+getter/setter, area, and my_print method."""
 
 
 class Square:
-    """Represents a square with private size, area calculation, and printing."""
+    """Represents a square with private size,
+    area calculation, and printing."""
 
     def __init__(self, size=0):
-        """Initialize a new Square, validating size via the setter."""
+        """Initialize a new Square, validating
+        size via the setter."""
         self.size = size
 
     @property
@@ -28,7 +31,8 @@ class Square:
         return self.__size * self.__size
 
     def my_print(self):
-        """Print the square using the '#' character or an empty line if size is 0."""
+        """Print the square using the '#' character
+        or an empty line if size is 0."""
         if self.__size == 0:
             print("")
             return

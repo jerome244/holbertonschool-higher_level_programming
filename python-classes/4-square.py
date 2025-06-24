@@ -1,12 +1,15 @@
 #!/usr/bin/python3
-"""Defines a Square class with private size attribute, getter/setter, and area method."""
+"""Defines a Square class with private size attribute,
+getter/setter, and area method."""
 
 
 class Square:
-    """Represents a square with a private size attribute and area computation."""
+    """Represents a square with a private
+    size attribute and area computation."""
 
     def __init__(self, size=0):
-        """Initialize a new Square, using the property setter for validation."""
+        """Initialize a new Square, using
+        the property setter for validation."""
         self.size = size
 
     @property
