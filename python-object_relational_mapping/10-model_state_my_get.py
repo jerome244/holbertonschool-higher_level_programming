@@ -1,24 +1,22 @@
-#!/usr/bin/ python3
-"""Prints the State id matching the name passed as argument."""
+#!/usr/bin/python3
+"""Prints the State id with the given name from hbtn_0e_6_usa."""
 
 import sys
 from sqlalchemy import create_engine
-from sqlalchemy.orm import Session
-from model_state import Base, State
-
-
-def main():
-    engine = create_engine(
-        'mysql+mysqldb://{}:{}@localhost/{}'
-        .format(sys.argv[1], sys.argv[2], sys.argv[3]),
-        pool_pre_ping=True
-    )
-    session = Session(engine)
-
-    result = session.query(State).filter(State.name == sys.argv[4]).one_or_none()
-    print(result.id if result else "Not found")
-    session.close()
-
+from sqlalchemy.orm import sessionmaker
+from model_state import State, Base
 
 if __name__ == "__main__":
-    main()
+    user, pwd, db, name = sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4]
+
+    engine = create_engine(
+        f"mysql+mysqldb://{user}:{pwd}@localhost/{db}",
+        pool_pre_ping=True
+    )
+    Session = sessionmaker(bind=engine)
+    session = Session()
+
+    state = session.query(State).filter(State.name == name).first()
+    print(state.id if state else "Not found")
+
+    session.close()
