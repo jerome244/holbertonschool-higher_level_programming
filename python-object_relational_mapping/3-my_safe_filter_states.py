@@ -1,22 +1,38 @@
 #!/usr/bin/python3
-"""Lists all states with a given name from the database safely against SQL injection."""
 
+"""3-my_safe_filter_states.py: Lists all states with a given name from the database safely against SQL injection."""
 import MySQLdb
 import sys
 
 if __name__ == "__main__":
-    conn = MySQLdb.connect(
-        host="localhost", port=3306,
-        user=sys.argv[1], passwd=sys.argv[2],
-        db=sys.argv[3], charset="utf8"
+    if len(sys.argv) != 5:
+        sys.exit(1)
+
+    username, password, database, state_name = (
+        sys.argv[1],
+        sys.argv[2],
+        sys.argv[3],
+        sys.argv[4],
     )
-    cur = conn.cursor()
-    cur.execute(
-        "SELECT * FROM states WHERE name = %s "
-        "ORDER BY id ASC",
-        (sys.argv[4],)
+
+    # Connect to MySQL server
+    connection = MySQLdb.connect(
+        host="localhost",
+        port=3306,
+        user=username,
+        passwd=password,
+        db=database,
+        charset="utf8",
     )
-    for row in cur.fetchall():
+    cursor = connection.cursor()
+
+    # Safe query using parameterized arguments to prevent SQL injection
+    query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
+    cursor.execute(query, (state_name,))
+
+    # Print matching states
+    for row in cursor.fetchall():
         print(row)
-    cur.close()
-    conn.close()
+
+    cursor.close()
+    connection.close()
