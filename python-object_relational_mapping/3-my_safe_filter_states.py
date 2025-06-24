@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 
-"""3-my_safe_filter_states.py: Lists all states with a given name from the database safely against SQL injection."""
+"""3-my_safe_filter_states.py: Lists all
+states with a given name from the database
+safely against SQL injection."""
 import MySQLdb
 import sys
 

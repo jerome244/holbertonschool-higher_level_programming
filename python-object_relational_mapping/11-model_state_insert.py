@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""Adds the State object 'Louisiana' to the database hbtn_0e_6_usa and prints its id."""
+"""Adds the State object 'Louisiana' to
+the database hbtn_0e_6_usa and prints its
+id."""
 
 import sys
 from sqlalchemy import create_engine

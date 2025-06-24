@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""12-model_state_update_id_2.py: Changes the name of the State object with id=2 to New Mexico in the database hbtn_0e_6_usa."""
+"""12-model_state_update_id_2.py:
+Changes the name of the State object with
+id=2 to New Mexico in the database hbtn_0e_6_usa."""
 
 import sys
 from sqlalchemy import create_engine
@@ -12,7 +14,9 @@ if __name__ == "__main__":
 
     user, password, database = sys.argv[1], sys.argv[2], sys.argv[3]
     engine = create_engine(
-        f"mysql+mysqldb://{user}:{password}@localhost/{database}", pool_pre_ping=True
+        f"mysql+mysqldb://{user}:{password}"
+        f"@localhost/{database}",
+        pool_pre_ping=True
     )
     # Ensure table is available
     Base.metadata.create_all(engine)
