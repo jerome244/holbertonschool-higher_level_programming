@@ -4,7 +4,7 @@ This module defines the Rectangle class with area and __str__.
 """
 
 
-BaseGeometry = __import__('7-base_geometry').BaseGeometry
+BaseGeometry = __import__("7-base_geometry").BaseGeometry
 
 
 class Rectangle(BaseGeometry):
@@ -13,6 +13,7 @@ class Rectangle(BaseGeometry):
 
     Instantiation with width and height validated as positive integers.
     """
+
     def __init__(self, width, height):
         """
         Initializes a rectangle with width and height.

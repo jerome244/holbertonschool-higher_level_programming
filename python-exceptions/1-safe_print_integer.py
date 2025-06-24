@@ -3,6 +3,7 @@
 Module that defines a function to safely print an integer.
 """
 
+
 def safe_print_integer(value):
     """
     Prints an integer value followed by a new line using "{:d}" formatting.

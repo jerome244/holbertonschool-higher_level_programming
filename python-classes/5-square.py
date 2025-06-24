@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Defines a Square class with private size attribute, getter/setter, area, and my_print method."""
 
+
 class Square:
     """Represents a square with private size, area calculation, and printing."""
 

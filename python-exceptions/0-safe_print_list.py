@@ -3,6 +3,7 @@
 Module that defines a function to safely print elements of a list.
 """
 
+
 def safe_print_list(my_list=[], x=0):
     """
     Prints up to x elements of my_list on the same line, then a new line.

@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 
+
 class CountedIterator:
     """
     Iterator that counts the number of items iterated.
     """
+
     def __init__(self, iterable):
         self._iterator = iter(iterable)
         self._count = 0

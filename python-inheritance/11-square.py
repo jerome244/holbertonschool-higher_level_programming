@@ -4,7 +4,7 @@ This module defines the Square class with custom __str__.
 """
 
 
-Rectangle = __import__('9-rectangle').Rectangle
+Rectangle = __import__("9-rectangle").Rectangle
 
 
 class Square(Rectangle):
@@ -13,6 +13,7 @@ class Square(Rectangle):
 
     Instantiation with size validated as a positive integer.
     """
+
     def __init__(self, size):
         """
         Initializes a square with given size.

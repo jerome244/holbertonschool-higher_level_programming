@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """Defines a Rectangle class with width, height, area, perimeter,
-string/repr representations, instance tracking, deletion message, and custom print symbol support."""
+string/repr representations, instance tracking, deletion message, and custom print symbol support.
+"""
+
 
 class Rectangle:
     """Represents a rectangle with private width and height attributes,

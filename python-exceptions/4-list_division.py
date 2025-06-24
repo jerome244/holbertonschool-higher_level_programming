@@ -3,6 +3,7 @@
 Module that defines a function to divide element by element two lists safely.
 """
 
+
 def list_division(my_list_1, my_list_2, list_length):
     """
     Divides element by element my_list_1 and my_list_2 up to list_length.

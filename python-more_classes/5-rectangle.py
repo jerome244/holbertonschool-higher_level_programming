@@ -2,6 +2,7 @@
 """Defines a Rectangle class with width, height, area, perimeter,
 string/repr representations, and deletion message."""
 
+
 class Rectangle:
     """Represents a rectangle with private width and height attributes."""
 

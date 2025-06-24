@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import pickle
 
+
 class CustomObject:
     def __init__(self, name, age, is_student):
         self.name = name
@@ -14,7 +15,7 @@ class CustomObject:
 
     def serialize(self, filename):
         try:
-            with open(filename, 'wb') as f:
+            with open(filename, "wb") as f:
                 pickle.dump(self, f)
         except Exception:
             # If any exception occurs, just silently fail or handle as needed
@@ -23,7 +24,7 @@ class CustomObject:
     @classmethod
     def deserialize(cls, filename):
         try:
-            with open(filename, 'rb') as f:
+            with open(filename, "rb") as f:
                 obj = pickle.load(f)
             return obj
         except Exception:

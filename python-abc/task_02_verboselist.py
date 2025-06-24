@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+
 class VerboseList(list):
     """
     Extends list and prints messages on append, extend, remove, and pop.

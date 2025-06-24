@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Defines a Square class with size and position attributes, plus area and printing."""
 
+
 class Square:
     """Represents a square with private size and position, area calculation, and printing."""
 
@@ -31,9 +32,12 @@ class Square:
     @position.setter
     def position(self, value):
         """Set the position of the square with validation."""
-        if (not isinstance(value, tuple) or len(value) != 2 or
-           not all(isinstance(n, int) for n in value) or
-           not all(n >= 0 for n in value)):
+        if (
+            not isinstance(value, tuple)
+            or len(value) != 2
+            or not all(isinstance(n, int) for n in value)
+            or not all(n >= 0 for n in value)
+        ):
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
 

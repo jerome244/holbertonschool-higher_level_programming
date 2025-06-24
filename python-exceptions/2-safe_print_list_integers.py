@@ -3,6 +3,7 @@
 Module that defines a function to safely print the first x integer elements of a list.
 """
 
+
 def safe_print_list_integers(my_list=[], x=0):
     """
     Prints the first x elements of my_list that are integers, all on the same line,

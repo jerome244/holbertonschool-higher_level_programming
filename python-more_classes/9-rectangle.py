@@ -3,6 +3,7 @@
 string/repr representations, instance tracking, deletion message, custom print symbol support,
 comparison utilities, and a square factory method."""
 
+
 class Rectangle:
     """Represents a rectangle with private width and height attributes,
     tracks the number of instances, provides print symbol customization,
