@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""Defines a Rectangle class with width and height attributes and validation."""
+"""Defines a Rectangle class with width and height attributes
+and validation."""
 
 
 class Rectangle:

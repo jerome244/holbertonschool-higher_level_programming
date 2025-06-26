@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""Defines a Rectangle class with width, height, area, perimeter, and string representation."""
+"""Defines a Rectangle class with width, height, area, perimeter,
+and string representation."""
 
 
 class Rectangle:
@@ -43,13 +44,15 @@ class Rectangle:
         return self.__width * self.__height
 
     def perimeter(self):
-        """Return the perimeter of the rectangle, or 0 if width or height is 0."""
+        """Return the perimeter of the rectangle, or 0 if width or
+        height is 0."""
         if self.__width == 0 or self.__height == 0:
             return 0
         return 2 * (self.__width + self.__height)
 
     def __str__(self):
-        """Return the rectangle drawn with '#' characters, or an empty string if width or height is 0."""
+        """Return the rectangle drawn with '#' characters, or an empty
+        string if width or height is 0."""
         if self.__width == 0 or self.__height == 0:
             return ""
         lines = ["#" * self.__width for _ in range(self.__height)]

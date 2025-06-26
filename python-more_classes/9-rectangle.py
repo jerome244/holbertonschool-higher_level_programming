@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Defines a Rectangle class with width, height, area, perimeter,
-string/repr representations, instance tracking, deletion message, custom print symbol support,
+string/repr representations, instance tracking, deletion message, custom
+print symbol support,
 comparison utilities, and a square factory method."""
 
 
@@ -13,7 +14,8 @@ class Rectangle:
     print_symbol = "#"
 
     def __init__(self, width=0, height=0):
-        """Initialize a new Rectangle, validating attributes and updating instance count."""
+        """Initialize a new Rectangle, validating attributes and updating
+        instance count."""
         self.width = width
         self.height = height
         type(self).number_of_instances += 1
@@ -51,24 +53,28 @@ class Rectangle:
         return self.__width * self.__height
 
     def perimeter(self):
-        """Return the perimeter of the rectangle, or 0 if width or height is 0."""
+        """Return the perimeter of the rectangle, or 0 if width or height
+        is 0."""
         if self.__width == 0 or self.__height == 0:
             return 0
         return 2 * (self.__width + self.__height)
 
     def __str__(self):
-        """Return the rectangle drawn with the print_symbol, or an empty string if width or height is 0."""
+        """Return the rectangle drawn with the print_symbol, or an empty
+        string if width or height is 0."""
         if self.__width == 0 or self.__height == 0:
             return ""
         row = str(self.print_symbol) * self.__width
         return "\n".join([row for _ in range(self.__height)])
 
     def __repr__(self):
-        """Return a string representation able to recreate a new instance via eval()."""
+        """Return a string representation able to recreate a new instance
+        via eval()."""
         return f"Rectangle({self.__width}, {self.__height})"
 
     def __del__(self):
-        """Print a message when a Rectangle instance is deleted and decrement instance count."""
+        """Print a message when a Rectangle instance is deleted and
+        decrement instance count."""
         type(self).number_of_instances -= 1
         print("Bye rectangle...")
 

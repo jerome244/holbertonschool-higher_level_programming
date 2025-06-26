@@ -49,22 +49,26 @@ class Rectangle:
         return self.__width * self.__height
 
     def perimeter(self):
-        """Return the perimeter of the rectangle, or 0 if width or height is 0."""
+        """Return the perimeter of the rectangle, or 0 if width or height
+        is 0."""
         if self.__width == 0 or self.__height == 0:
             return 0
         return 2 * (self.__width + self.__height)
 
     def __str__(self):
-        """Return the rectangle drawn with '#' characters, or an empty string if width or height is 0."""
+        """Return the rectangle drawn with '#' characters, or an empty
+        string if width or height is 0."""
         if self.__width == 0 or self.__height == 0:
             return ""
         return "\n".join(["#" * self.__width for _ in range(self.__height)])
 
     def __repr__(self):
-        """Return a string representation able to recreate a new instance via eval()."""
+        """Return a string representation able to recreate a new instance
+        via eval()."""
         return f"Rectangle({self.__width}, {self.__height})"
 
     def __del__(self):
-        """Print a message when a Rectangle instance is deleted and decrement instance counter."""
+        """Print a message when a Rectangle instance is deleted and
+        decrement instance counter."""
         type(self).number_of_instances -= 1
         print("Bye rectangle...")
