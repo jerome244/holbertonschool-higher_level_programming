@@ -1,6 +1,5 @@
 #!/usr/bin/node
 
-// Ensure this file is executable: chmod +x 8-square.js
 const size = parseInt(process.argv[2], 10);
 
 if (isNaN(size)) {
