@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Product Display</title>
+</head>
+<body>
+    <h1>Products</h1>
+    {% if error %}
+        <p style="color:red;"><strong>{{ error }}</strong></p>
+    {% elif products %}
+        <ul>
+        {% for p in products %}
+            <li>{{ p.name }} - {{ p.category }} - ${{ p.price }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No products to display.</p>
+    {% endif %}
+</body>
+</html>
